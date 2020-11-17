@@ -7,7 +7,7 @@
     </div>
     <div fxFlex>
         <mat-grid-list cols="2" rowheight="200px">
-            <mat-grid-tile *ngFor="let i of dishes" (click)="onSelect(i)">
+            <mat-grid-tile *ngFor="let i of dishes" [routerLink]="[ '/dishdetail', i.id ]">
                 <img height="200px" src={{i.image}} alt={{i.name}}>
                 <mat-grid-tile-footer>
                     <h2 matLine>{{i.name | uppercase }}</h2>
@@ -19,7 +19,7 @@
         </mat-grid-list>
     </div>
 
-    <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+<!--     <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
         <div fxFlex="60" *ngIf="selectedDish">
             <p>Display the details of the Dish here</p>
             <app-dish-detail [dish]="selectedDish"></app-dish-detail>
@@ -36,5 +36,6 @@
                 <br>
             </div>
         </div>
-    </div>
+    </div> -->
+    <!-- <app-dish-detail [dish]="selectedDish"></app-dish-detail> -->
 </div>

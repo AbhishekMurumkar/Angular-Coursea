@@ -15,6 +15,7 @@ $accent-color:         #FFC107;
 $primary-text-color:   #212121;
 $secondary-text-color: #757575;
 $divider-color:        #BDBDBD;
+$background-moredark: #4527A0;
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
     margin: 0px auto;
@@ -29,9 +30,17 @@ $divider-color:        #BDBDBD;
     background-color: $accent-color!important;
   }
 .text-floral-white {
-    color: floralwhite!important;
+    color: floralwhite !important;
 }
 
 .flex-spacer {
   flex: 1 1 auto;
+}
+
+.container{
+	padding:10px;
+}
+
+.active {
+    background: $background-moredark;
 }

@@ -11,4 +11,10 @@ export class DishService {
   getDishes():Dish[] {
     return DISHES;
   }
+  getDish(id:string):Dish{
+  	return DISHES.filter(dish=>dish.id===id)[0]; //return searched id dish
+  }
+  getFeaturedDish():Dish{
+  	return DISHES.filter(dish=>dish.featured)[0]; //return featured (first) dish
+  }
 }
