@@ -26,8 +26,10 @@ This is modular in nature, that is angular first loads a default or root module(
 
 **Angular Modules**:
 These are the key and starting points of the application.
+
 ![](02-Angular/02-Angular0.png)<br>
 Which inturn depend on
+
 ![](02-Angular/02-Angular1.png)<br>
 Note:
 
@@ -111,24 +113,24 @@ in which mydata is called as **_binding target_** and somedata is called as **_b
 ## UI Design and Prototyping: Additional Resources
 
 Wireframing, Mockups and UI Design
-    * [Wireframe.cc](https://wireframe.cc/)
-    * [Moqups.com](https://moqups.com/)
-    * [Axure](http://www.axure.com/)
-    * [proto.io](https://proto.io/)
-    * [framerjs.com](http://framerjs.com/)
-    * [The 20 best wireframe tools](http://www.creativebloq.com/wireframes/top-wireframing-tools-11121302)
-    * [Web Design Inspirations](http://www.webdesign-inspiration.com/)
-    * [Adobe Experience Design](http://www.adobe.com/products/experience-design.html)
-    * [Free Bootstrap Wireframing Set for PowerPoint](https://onextrapixel.com/free-bootstrap-wireframing-set-for-powerpoint/)
+  * [Wireframe.cc](https://wireframe.cc/)
+  * [Moqups.com](https://moqups.com/)
+  * [Axure](http://www.axure.com/)
+  * [proto.io](https://proto.io/)
+  * [framerjs.com](http://framerjs.com/)
+  * [The 20 best wireframe tools](http://www.creativebloq.com/wireframes/top-wireframing-tools-11121302)
+  * [Web Design Inspirations](http://www.webdesign-inspiration.com/)
+  * [Adobe Experience Design](http://www.adobe.com/products/experience-design.html)
+  * [Free Bootstrap Wireframing Set for PowerPoint](https://onextrapixel.com/free-bootstrap-wireframing-set-for-powerpoint/)
 
 UI Templates
-    * [Bootstrap Expo](http://expo.getbootstrap.com/)
-    * [Ionic Showcase](http://showcase.ionicframework.com/)
+  * [Bootstrap Expo](http://expo.getbootstrap.com/)
+  * [Ionic Showcase](http://showcase.ionicframework.com/)
 
 Information Architecture
-    * [A visual vocabulary for describing information architecture and interaction design](http://www.jjg.net/ia/visvocab/)
-    * [The Elements of User Experience](http://www.jjg.net/elements/)
-    * [The Elements of User Experience: User-Centered Design for the Web and Beyond (2nd Edition) (Voices That Matter)](http://www.amazon.com/The-Elements-User-Experience-User-Centered/dp/0321683684/ref=pd_cp_14_1?ie=UTF8&refRID=0RXJWKFHY0TNF5QM2764)
+  * [A visual vocabulary for describing information architecture and interaction design](http://www.jjg.net/ia/visvocab/)
+  * [The Elements of User Experience](http://www.jjg.net/elements/)
+  * [The Elements of User Experience: User-Centered Design for the Web and Beyond (2nd Edition) (Voices That Matter)](http://www.amazon.com/The-Elements-User-Experience-User-Centered/dp/0321683684/ref=pd_cp_14_1?ie=UTF8&refRID=0RXJWKFHY0TNF5QM2764)
 
 ---
 
@@ -201,9 +203,26 @@ While dealing with services, there are some basics to be learnt first. They are
 * Here we make use of 2 way data binding for continous track of form change and error handling
 * supports 2 types of forms
   1. Template Driven: 
-     1. Use angular template syntax to construct angular elements
-     2. Form Validation
+     1. Forms are built using HTML code
+     2. Use angular template syntax to construct angular elements
      3. Make ngModel directive for 2 way data binding
-     4. In order to make use of these forms, we need to
-        1. import MatFormFieldModule
-  2. Reactive Forms: 
+     4. In order to make use of these forms, we need to import FormsModule from @angular/forms in app.module.ts
+     5. Form Validation : Get Complete documentation [here](https://angular.io/guide/form-validation)
+        1. Turn off form validation with the help ```novalidate``` attribute to form tag
+        2. refer form as a variable via sign # or 2 way data binding. Templates variables set to ```ngForm``` and ```ngModel``` gives references to Angular directives
+		<br> Example : 
+			* ```<input #username="ngModel" ...>``` Here we referenced our input to a variable named as username
+			* TO disable a button on form/input invalid state:
+				```html
+				<button type="submit" [disabled]="loginForm.form.invalid>Login</button>
+				```
+			* Showing the error message to above code
+				```html
+				<input [(ngModel)]="user.username" name="username" #username="ngModel" required>
+				<div *ngIf="username.errors ? .required">Username is required</div>
+				```
+  2. Reactive Forms:
+	* **_Reactive Programming_** :  
+	* Forms are built using the typescript code
+	* Here we create a tree of angular form objects within the component class, later we bind these forms objects into the template
+	* In this way, we have complete control over data model & form-control structure ,i.e: push data model values to form controls and pull user-changed values

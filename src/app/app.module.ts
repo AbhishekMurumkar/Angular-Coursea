@@ -1,3 +1,4 @@
+//built in modules
 import { BrowserModule }          from '@angular/platform-browser';
 import { NgModule }               from '@angular/core';
 import { BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -14,11 +15,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FormsModule} from '@angular/forms';
 
 import 'hammerjs';
-
+// services
 import { DishService } from "./services/dish.service";
 import { PromotionService } from "./services/promotion.service";
 import { LeaderService } from "./services/leader.service";
-
+// components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -27,9 +28,9 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-
-import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { LoginComponent } from './login/login.component';
+// routes
+import { AppRoutingModule } from "./app-routing/app-routing.module";
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { LoginComponent } from './login/login.component';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     DishService,
