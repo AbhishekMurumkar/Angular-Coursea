@@ -194,3 +194,16 @@ While dealing with services, there are some basics to be learnt first. They are
 	* Analytics - setup and collect
 	* Speed up initial load
 
+---
+
+## Angular forms
+
+* Here we make use of 2 way data binding for continous track of form change and error handling
+* supports 2 types of forms
+  1. Template Driven: 
+     1. Use angular template syntax to construct angular elements
+     2. Form Validation
+     3. Make ngModel directive for 2 way data binding
+     4. In order to make use of these forms, we need to
+        1. import MatFormFieldModule
+  2. Reactive Forms: 
